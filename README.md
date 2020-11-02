@@ -1,33 +1,38 @@
-# sneakerzam
-SneakerZam is a python algorithm that predict sneaker's model
-
 # SneakerZam
 ## Final Proyect - Ironhack
-  
-![Image](https://images.unsplash.com/photo-1551901460-c84042b6e4ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=500&q=80)  
+
+![Image](https://images.unsplash.com/photo-1528669697102-a6edb9b6a282?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=500&q=80)  
 
 ## Table of Contents  
 
-* [About the Project](#about-the-project)  
-  * [Challenge 1](#pushpin-challenge-1)  
-  * [Challenge 3](#pushpin-challenge-2)  
-  * [Challenge 2](#pushpin-challenge-3)      
-  * [Built With](#hammer-built-with)  
-* [How to use the pipeline](#how-to-use-the-pipeline)  
+* [About the Project](#about-the-project) 
+  * [Data]()
+  * [Random Prediction](#pushpin-challenge-1)  
+  * [Prediction based on a given picture](#pushpin-challenge-2)  
+  * [Take a picture with your camera ](#pushpin-challenge-3)      
+  * [Recommendation System](#pushpin-challenge-3)     
+
+* [How was it made?](#how-to-use-the-pipeline)  
+  * [How was built?](#hammer-built-with)  
   * [Prerequisites](#page_with_curl-prerequisites)  
   * [Inputs](#computer-inputs)  
   * [Folder Structure](#file_folder-folder-structure)  
  * [Procesing Stages](#procesing-stages)
-	  * [Acquistion](#electric_plug-acquisition)  
-	  * [Wrangling](#wrench-wrangling)  
-	  * [Analysis](#rocket-analysis)  
-	  * [Reporting](#mailbox-reporting)  
+      * [Acquistion](#electric_plug-acquisition)  
+      * [Wrangling](#wrench-wrangling)  
+      * [Analysis](#rocket-analysis)  
+      * [Reporting](#mailbox-reporting)  
 * [Next Stages](#next-stages) 
   
 ## About the project  
+
+SneakerZam is a python algorithm that predict sneaker's model. Based on a Convolutional Neuronal Network, the algorithm will predict which sneakers is shown on a given picture.
+
+### :bookmark_tabs: Data
   
+To create a big database, I started using [Sneakers Databased Api](https://app.swaggerhub.com/apis-docs/tg4solutions/the-sneaker-database/1.0.0#/sneakers/getSneakers). the problem was that there are a lot of sneakers models with a few images. We solved this problem with web scrapping and Selenium. The database grown to 80k images and after several filters, it ended in a database with 30k group by 504 models. 
   
-###  :pushpin: Part 1  
+### :pushpin: Random Prediction
   
 
   
@@ -45,106 +50,43 @@ SneakerZam is a python algorithm that predict sneaker's model
 
   ###  :hammer: Built With   
 The core of the project is Python 3.7.3, but you have to install those libraries for run the script.   
-Native packages:  
-- [Argparse](https://docs.python.org/3.7/library/argparse.html)  
-- [Configparser](https://docs.python.org/3/library/configparser.html)  
-- [Datetime](https://docs.python.org/2/library/datetime.html)  
-- [Re](https://docs.python.org/3/library/re.html)  
-- [Smtplib](https://docs.python.org/3/library/smtplib.html)  
-- [Email](https://docs.python.org/3/library/email.examples.html)  
-  
-Furthermore, it is has to be installed the following libraries:  
-- [SQL Alchemy (v.1.3.17)](https://docs.sqlalchemy.org/en/13/intro.html)  
+
 - [Pandas (v.0.24.2)](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)  
-- [Numpy (v.1.18.1)](https://numpy.org/doc/stable/)  
-- [Requests (v.2.23.0)](https://requests.readthedocs.io/)  
-- [Beautiful Soup (v.4.9.1)](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)  
-- [Pysftp (0.2.9) ](https://pypi.org/project/pysftp/)  
+
 
   
 ## **How to use the app**
 ###  **:page_with_curl:Prerequisites**  
 Please, install all the libraries mentinoned in [Built With](#built-with) in your enviroment in order to run the script.  
-   
-Furthemore, there is a config.ini file where you have to specify all parameters that you need to run the script. Please, fill out all the variables in order to run the script. You will need the database, api url, and webscraping url.   
   
-In order to send an email and upload the outcome csv, you will need to provide a gmail email, reciever, pass.
-For uploading the html version of the results, you will need to provide the sftp user and password of your hosting. 
-
-Don't worry about privacity, this config file will not be uploaded to github.  
-
-Example of config.ini file: 
-
-```  
-[email]  
-user = your user email  
-password = your password email  
-receiver = people who will recieve the email  
-  
-[data]  
-db = database path  
-url = url for scrapping country codes  
-  
-[website]  
-myHostname = xxxxxxx  
-myUsername = xxxxxxx  
-myPassword = xxxxxxx ```  
-```
-  
-
   
 ### **:computer: Inputs**  
  
   
 ### :file_folder: **Folder structure**  
 ```
-└── ih_datamadpt0420_project_m1  
-    ├── __trash__  
-  ├── .gitignore  
-    ├── .env  
+└── sneakerzam   
     ├── requeriments.txt  
     ├── README.md  
-    ├── main_script.py  
-    ├── config.ini  
     ├── notebooks  
-    │   ├── notebook1.ipynb  
-    │   └── notebook2.ipynb  
-    ├── p_acquisition  
-    │   ├── __init__.py  
-    │   └── m_acquisition.py  
-    ├── p_analysis  
-    │   ├── __init__.py  
-    │   └── m_analysis.py  
-    ├── p_reporting  
-    │   ├── __init__.py  
-    │   └── m_reporting.py  
-    ├── p_wrangling  
-    │   ├── __init__.py  
-    │   └── m_wrangling.py  
-    └── data  
-        ├── html  
-        ├── raw  
-        └── results  
-```  
+    │   └── cnn_shoe_prediction.ipynb  
+    │   
+    └── streamlit
+        │   ├── __init__.py  
+        │   └── m_acquisition.py  
+        ├── p_model 
+        │   ├── __init__.py  
+        │   └── m_model.py  
+        ├── p_reporting  
+        │   ├── __init__.py  
+        │   └── m_reporting.py  
+        └── p_recommender_system  
+            ├── __init__.py  
+            └── m_rs.py  
+
   
 
 ## **Processing stages**  
-  
-### **:electric_plug: Acquisition**  
-  
-
-  
-### **:wrench: Wrangling**  
-
-
-
- ### **:rocket: Analysis**  
-
-
-  
- ### **:mailbox: Reporting**  
- 
-
   
  ---  
 ### ** Next stages**  
