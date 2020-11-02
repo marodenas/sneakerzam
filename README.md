@@ -8,7 +8,7 @@
 * [About the Project](#about-the-project) 
   * [Data]()
   * [Random Prediction](#pushpin-challenge-1)  
-  * [Prediction based on a given picture](#pushpin-challenge-2)  
+  * [Prediction uploading](#pushpin-challenge-2)  
   * [Take a picture with your camera ](#pushpin-challenge-3)      
   * [Recommendation System](#pushpin-challenge-3)     
 
@@ -33,19 +33,22 @@ SneakerZam is a python algorithm that predict sneaker's model. Based on a Convol
 To create a big database, I started using [Sneakers Databased Api](https://app.swaggerhub.com/apis-docs/tg4solutions/the-sneaker-database/1.0.0#/sneakers/getSneakers). the problem was that there are a lot of sneakers models with a few images. We solved this problem with web scrapping and Selenium. The database grown to 80k images and after several filters, it ended in a database with 30k group by 504 models. 
   
 ### :pushpin: Random Prediction
-  
+
+![image info](./readmeims/randomp.png)
 
   
-###  :pushpin: Part 2  
+###  :pushpin: Prediction uploading img
   
+![image info](./readmeims/uploadimg.png)
+  
+  
+###  :pushpin: Take a picture with your camera  
 
-  
-  
-###  :pushpin: Part 3  
+![image info](./readmeims/tp.png)
 
-###  :pushpin: Part 4  
+###  :pushpin: Recommendation System  
   
-
+![image info](./readmeims/rs.png)
 
 
   ###  :hammer: Built With   
