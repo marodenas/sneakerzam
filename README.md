@@ -6,7 +6,7 @@
 ## Table of Contents  
 
 * [About the Project](#about-the-project) 
-  * [Data](#bookmark_tabs:-data)
+  * [Data](#bookmark_tabs-data)
   * [Random Prediction](#pushpin-randon-prediction)  
   * [Prediction uploading](#pushpin-prediction-uploading)  
   * [Take a picture with your camera ](#pushpin-take-a-picture-with-your-camera)      
@@ -22,7 +22,7 @@
 
 SneakerZam is a python algorithm that predict sneaker's model. Based on a Convolutional Neuronal Network, the algorithm will predict which sneaker model is shown on a given picture.
 
-### :bookmark_tabs: Data
+### **:bookmark_tabs: Data**
   
 To create a big database, I started using [Sneakers Databased Api](https://app.swaggerhub.com/apis-docs/tg4solutions/the-sneaker-database/1.0.0#/sneakers/getSneakers) as the main source of my project. The problem was that in the database there are a lot of sneakers models with few images. In order to create a balanced and robust databease for a convolutional neouronal network, we need more images.
 
@@ -32,7 +32,7 @@ After creating a Sequential layer CNN, i realized that loss and accuracy was not
 
 Note that for github limitations, i have not update the database. There is a database with url column where you will be able to download the image and create a new column with the absolute paht of the image for this dataset. 
 
-### Streamlit
+### **:computer: Streamlit**
 
 To create a more friendly interface, i use Streamlit combined with a custom pipeline that resolved all the steps needed for correct functionallities of the CNN. 
   
@@ -94,8 +94,6 @@ and you will see the app.
 
 My strongly recommendation is to play with the interface!!
   
-### **:computer: Inputs**  
- 
   
 ### :file_folder: **Folder structure**  
 ```
